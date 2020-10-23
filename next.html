@@ -55,12 +55,15 @@ body {
         }
 
       }
-    </script>
+      //var result;
 
-    <script>
-      var next2=document.getElementById("Next2");
-      next2.onclick=function(){
-        window.location.href="result.html";
+      
+      function formvalid(){
+        var submitbtn=document.forms["Form 2"]["Next2"];
+        submitbtn.onclick =function(){
+        window.alert("Your result is: Wheat");
+    }      
+        
       }
     </script>
     </head>
@@ -80,8 +83,9 @@ body {
         </a>
       </div>
     </header>
-      <div class="signin" onsubmit="formvalid()"> 
-        <form id="form2" name="Form 2" action="/action_page.php">
+      <div class="signin" > 
+        <form id="form2" name="Form 2" action="/action_page.php" onsubmit="formvalid()">
+          <h1>Crop Information </h1>
           Location
           <select name="location" id="location">
             <option value="" selected="selected">Select Location</option>
@@ -94,7 +98,8 @@ body {
           <select name="crops" id="crops">
             <option value="" selected="selected">Select Crop</option>
           </select><br>
-          <button type="submit" id="Next2" name="Next">Save</button>
+
+          <button type="submit" id="Next2" name="Next">Submit</button><input type="submit" name="Next">
         </form>
       </div>
   </header>
