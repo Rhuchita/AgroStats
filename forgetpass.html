@@ -22,7 +22,7 @@ body {
     <title>Agro_Stats</title>
 
     <script>
-      var temp=0,n;
+      var temp=0;
       var form1=document.getElementById("form1");
 
       function formvalid(){
@@ -64,12 +64,11 @@ body {
           return temp+=1;
         }
 
-        if (temp==4){
-          n=pass1.localeCompare(pass2);
+        if (temp==3){
+          var n=pass1.localeCompare(pass2);
           if (n==0){
-            var next1=document.forms["Form 1"]["Next"];
             next1.onclick =function(){
-              window.location.replace("index.html");
+              window.location.href="index.html";
             }
           }
           else{
@@ -79,7 +78,7 @@ body {
         else{
           window.alert("Please fill all details");
         }
-        console.log("hii");
+
       }
     </script>
 </head>
@@ -102,16 +101,16 @@ body {
 
   <div class="signin">
     <form id="form1" name="Form 1" action="/action_page.php" onsubmit="formvalid()">
-      <label for="Name">Username</label><br>
+        <label for="Name">Username</label><br>
         <input type="text" name="name" placeholder="Name" size="65"><br>
         <label id="email">Email-Id</label><br>
         <input type="email" name="email" placeholder="Email-Id" size="65"><br>
-        <label id="Password">Password</label><br>
+        <label id="Password">New Password</label><br>
         <input type="Password" name="pass" placeholder="Password" size="65"><br>
         <label id="Password">Confirm Password</label><br>
         <input type="Password" name="pass1" placeholder="Password1" size="65"><br>
         <div class="btn-box">
-          <button type="submit" id="Next1" name="Next" >REGISTER</button>
+          <button type="submit" id="Next1" name="Next" >RESET</button>
         </div>
     </form>
 
